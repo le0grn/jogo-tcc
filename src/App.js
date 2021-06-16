@@ -4,9 +4,6 @@ import {
   Box,
   Button,
   Text,
-  Link,
-  Flex,
-  Code,
   Grid,
   theme,
   GridItem,
@@ -16,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import { motion } from "framer-motion";
 import { questoes } from "./questoes";
-import useSound from 'use-sound';
 import hit from "./hit.wav";
 import hurt from "./hurt.wav";
 
