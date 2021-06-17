@@ -188,6 +188,7 @@ function App() {
               spacing={6}
             >
               <MotionHeading
+                color="white"
                 animate={{
                   rotate: [0, 0.5, 0, -0.5, 0],
                   scale: [1, 0.97, 1]
@@ -199,7 +200,8 @@ function App() {
               >
                 (ENEM - {questoes[questaoAtual].ano})
               </MotionHeading>
-              <MotionHeading 
+              <MotionHeading
+                color="white" 
                 id="titulo" 
                 whiteSpace="pre-wrap"
                 animate={{
@@ -213,7 +215,8 @@ function App() {
               >
                 {questoes[questaoAtual].titulo}
               </MotionHeading>
-              <MotionText 
+              <MotionText
+                color="white" 
                 id="texto" 
                 whiteSpace="pre-wrap"
                 animate={{
@@ -227,7 +230,8 @@ function App() {
               >
                 {questoes[questaoAtual].texto}
               </MotionText>
-              <MotionText 
+              <MotionText
+                color="white" 
                 id="fonte" 
                 whiteSpace="pre-wrap" 
                 alignSelf="end"
@@ -242,7 +246,8 @@ function App() {
               >
                 {questoes[questaoAtual].fonte}
               </MotionText>
-              <MotionText 
+              <MotionText
+                color="white" 
                 id="enunciado"
                 animate={{
                   rotate: [0, -0.2, 0, 0.2, 0],
@@ -257,6 +262,7 @@ function App() {
               </MotionText>
               {questoes[questaoAtual].alternativas.map((alternativa) => (
                 <MotionText
+                color="white"
                 animate={{
                   rotate: [0, 0.2, 0, -0.2, 0],
                   scale: [1, 0.99, 1]
