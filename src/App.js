@@ -52,7 +52,7 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
+      <Box textAlign="center" fontSize="xl" bg="gray.800">
         <Grid 
           templateColumns="repeat(5, 1fr)"
           templateRows="repeat(2, 1fr)" 
@@ -62,6 +62,7 @@ function App() {
           gap={4}
         >
           <MotionGridItem 
+            borderRadius={20}
             colSpan={5} 
             bg="blue.600"
             p={3}
@@ -92,6 +93,7 @@ function App() {
                 }}
               >
                 <Progress 
+                  borderRadius={30}
                   min={0} 
                   max={400} 
                   value={vidaJogador}
@@ -124,6 +126,7 @@ function App() {
                 colEnd={6}
               >
                 <Progress 
+                  borderRadius={30}
                   min={0} 
                   max={600} 
                   value={vidaInimigo}
@@ -132,6 +135,7 @@ function App() {
                 />
               </MotionGridItem>
               <MotionGridItem
+                borderRadius={150}
                 colStart={1}
                 colEnd={2}
                 rowStart={2}
@@ -150,6 +154,7 @@ function App() {
 
               </MotionGridItem>
               <MotionGridItem
+                borderRadius={150}
                 colStart={5}
                 colEnd={6}
                 rowStart={2}
@@ -167,116 +172,7 @@ function App() {
               >
               </MotionGridItem>
             </Grid>
-          </MotionGridItem>
-          <MotionGridItem 
-            colSpan={4} 
-            textAlign="start"
-            bg="gray.700" 
-            p={3}
-            overflowY="auto"
-            animate={{
-              rotate: [0, 0.1, 0, -0.1, 0],
-              scale: [1, 0.995, 1]
-            }}
-            transition={{
-              repeat: Infinity,
-              type: 'spring',
-            }}
-          >
-            <VStack 
-              align="start"
-              spacing={6}
-            >
-              <MotionHeading
-                color="white"
-                animate={{
-                  rotate: [0, 0.5, 0, -0.5, 0],
-                  scale: [1, 0.97, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-              >
-                (ENEM - {questoes[questaoAtual].ano})
-              </MotionHeading>
-              <MotionHeading
-                color="white" 
-                id="titulo" 
-                whiteSpace="pre-wrap"
-                animate={{
-                  rotate: [0, -0.2, 0, 0.2, 0],
-                  scale: [1, 0.99, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-              >
-                {questoes[questaoAtual].titulo}
-              </MotionHeading>
-              <MotionText
-                color="white" 
-                id="texto" 
-                whiteSpace="pre-wrap"
-                animate={{
-                  rotate: [0, -0.2, 0, 0.2, 0],
-                  scale: [1, 0.99, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-              >
-                {questoes[questaoAtual].texto}
-              </MotionText>
-              <MotionText
-                color="white" 
-                id="fonte" 
-                whiteSpace="pre-wrap" 
-                alignSelf="end"
-                animate={{
-                  rotate: [0, 0.2, 0, -0.2, 0],
-                  scale: [1, 0.99, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-              >
-                {questoes[questaoAtual].fonte}
-              </MotionText>
-              <MotionText
-                color="white" 
-                id="enunciado"
-                animate={{
-                  rotate: [0, -0.2, 0, 0.2, 0],
-                  scale: [1, 0.99, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-              >
-                {questoes[questaoAtual].enunciado}
-              </MotionText>
-              {questoes[questaoAtual].alternativas.map((alternativa) => (
-                <MotionText
-                color="white"
-                animate={{
-                  rotate: [0, 0.2, 0, -0.2, 0],
-                  scale: [1, 0.99, 1]
-                }}
-                transition={{
-                  repeat: Infinity,
-                  type: 'spring',
-                }}
-                >
-                  {alternativa.texto}
-                </MotionText>
-              ))}
-            </VStack>
-          </MotionGridItem>
+          </MotionGridItem>        
           <GridItem colSpan={1}>
             <Grid
               templateRows="repeat(5, 1fr)"
@@ -462,6 +358,122 @@ function App() {
 
             </Grid>
           </GridItem>
+          <MotionGridItem
+            borderRadius={20} 
+            colSpan={4} 
+            textAlign="start"
+            bg="gray.700" 
+            p={3}
+            overflowY="auto"
+            animate={{
+              rotate: [0, 0.1, 0, -0.1, 0],
+              scale: [1, 0.995, 1]
+            }}
+            transition={{
+              repeat: Infinity,
+              type: 'spring',
+            }}
+          >
+            <VStack 
+              align="start"
+              spacing={6}
+            >
+              <MotionHeading
+                color="white"
+                animate={{
+                  rotate: [0, 0.5, 0, -0.5, 0],
+                  scale: [1, 0.97, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+              >
+                (ENEM - {questoes[questaoAtual].ano})
+              </MotionHeading>
+              <MotionHeading
+                color="white" 
+                id="titulo" 
+                whiteSpace="pre-wrap"
+                animate={{
+                  rotate: [0, -0.2, 0, 0.2, 0],
+                  scale: [1, 0.99, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+              >
+                {questoes[questaoAtual].titulo}
+              </MotionHeading>
+              <MotionText
+                color="white" 
+                id="texto" 
+                whiteSpace="pre-wrap"
+                textAlign="justify"
+                animate={{
+                  rotate: [0, -0.2, 0, 0.2, 0],
+                  scale: [1, 0.99, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+              >
+                {questoes[questaoAtual].texto}
+              </MotionText>
+              <MotionText
+                color="white" 
+                id="fonte" 
+                whiteSpace="pre-wrap" 
+                alignSelf="end"
+                animate={{
+                  rotate: [0, 0.2, 0, -0.2, 0],
+                  scale: [1, 0.99, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+              >
+                {questoes[questaoAtual].fonte}
+              </MotionText>
+              <MotionText
+                color="white" 
+                id="enunciado"
+                animate={{
+                  rotate: [0, -0.2, 0, 0.2, 0],
+                  scale: [1, 0.99, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+              >
+                {questoes[questaoAtual].enunciado}
+              </MotionText>
+              {questoes[questaoAtual].alternativas.map((alternativa) => (
+                <MotionText
+                color="white"
+                animate={{
+                  rotate: [0, 0.2, 0, -0.2, 0],
+                  scale: [1, 0.99, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  type: 'spring',
+                }}
+                whileHover={{ 
+                  scale: [1.02, 1.04, 1.02],
+                  rotate: [0, -1, 0, 1, 0] 
+                }}
+                onClick={() => verificaAlternativa(alternativa.isCorrect)}
+                >
+                  {alternativa.texto}
+                </MotionText>
+              ))}
+            </VStack>
+          </MotionGridItem>
         </Grid>
       </Box>
     </ChakraProvider>
